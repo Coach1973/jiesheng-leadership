@@ -9,54 +9,50 @@
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;500;700&display=swap');
 
-        :root {
-            --tw-color-primary: #1e40af;
-        }
-
         body {
             font-family: 'Noto Sans TC', system-ui, -apple-system, sans-serif;
             font-size: 18px;
             line-height: 1.9;
         }
 
-        h1 { font-size: 2.5rem; }
-        h2 { font-size: 1.75rem; }
-        h3 { font-size: 1.4rem; }
-
         .header-gradient {
             background: linear-gradient(135deg, #1e40af 0%, #3b82f6 100%);
         }
 
-        .section-header {
-            position: relative;
+        .participant-card {
+            background: white;
+            border-radius: 20px;
+            padding: 1.5rem;
+            text-align: center;
+            border: 2px solid;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.06);
+            transition: transform 0.2s;
         }
 
-        .section-header::after {
-            content: '';
-            position: absolute;
-            bottom: -4px;
-            left: 0;
-            width: 60px;
-            height: 3px;
-            background: #1e40af;
-            border-radius: 9999px;
+        .participant-card:hover {
+            transform: translateY(-4px);
         }
 
-        .participant-tag {
-            display: inline-block;
-            padding: 0.25rem 0.75rem;
-            border-radius: 9999px;
-            font-size: 0.9rem;
-            font-weight: 600;
-        }
-
-        .task-card {
+        .task-item {
             background: white;
             border-radius: 16px;
-            padding: 1.5rem;
-            margin-bottom: 1rem;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.06);
-            border-left: 5px solid;
+            padding: 1.25rem 1.5rem;
+            margin-bottom: 0.75rem;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-size: 18px;
+        }
+
+        .section-title {
+            font-size: 1.75rem;
+            font-weight: 700;
+        }
+
+        .subsection-title {
+            font-size: 1.35rem;
+            font-weight: 600;
         }
     </style>
 </head>
@@ -66,7 +62,7 @@
         <!-- 頂部標頭 -->
         <div class="header-gradient text-white py-10 px-8 rounded-b-3xl shadow-xl">
             <div class="flex items-center justify-between flex-wrap gap-4">
-                <div class="flex items-center gap-4">
+                <div class="flex items-center gap-5">
                     <div class="w-16 h-16 bg-white/20 backdrop-blur-md rounded-2xl flex items-center justify-center text-4xl flex-shrink-0">
                         📋
                     </div>
@@ -90,38 +86,38 @@
 
         <div class="px-8 py-12 space-y-14">
 
-            <!-- 參與者（放在最上面） -->
+            <!-- 參與者 -->
             <section>
                 <div class="flex items-center gap-3 mb-6">
                     <span class="text-4xl">👥</span>
-                    <h2 class="section-header text-3xl font-semibold text-slate-900">參與者</h2>
+                    <h2 class="text-3xl font-bold">參與者</h2>
                 </div>
 
                 <div class="grid grid-cols-2 md:grid-cols-5 gap-4">
-                    <div class="bg-amber-50 border-2 border-amber-200 rounded-2xl p-5 text-center">
-                        <div class="text-4xl mb-2">👑</div>
-                        <div class="font-bold text-xl text-amber-800">曜董</div>
-                        <div class="text-sm text-amber-600 mt-1">總策劃・最終決策</div>
+                    <div class="participant-card border-amber-300 bg-amber-50">
+                        <div class="text-5xl mb-3">👑</div>
+                        <div class="font-bold text-2xl text-amber-800">曜董</div>
+                        <div class="text-base text-amber-600 mt-3">總策劃・最終決策</div>
                     </div>
-                    <div class="bg-emerald-50 border-2 border-emerald-200 rounded-2xl p-5 text-center">
-                        <div class="text-4xl mb-2">🌳</div>
-                        <div class="font-bold text-xl text-emerald-800">大樹</div>
-                        <div class="text-sm text-emerald-600 mt-1">主持・流程統籌</div>
+                    <div class="participant-card border-emerald-300 bg-emerald-50">
+                        <div class="text-5xl mb-3">🌳</div>
+                        <div class="font-bold text-2xl text-emerald-800">大樹</div>
+                        <div class="text-base text-emerald-600 mt-3">主持・流程統籌</div>
                     </div>
-                    <div class="bg-blue-50 border-2 border-blue-200 rounded-2xl p-5 text-center">
-                        <div class="text-4xl mb-2">📋</div>
-                        <div class="font-bold text-xl text-blue-800">在珍</div>
-                        <div class="text-sm text-blue-600 mt-1">行政・排程</div>
+                    <div class="participant-card border-blue-300 bg-blue-50">
+                        <div class="text-5xl mb-3">📋</div>
+                        <div class="font-bold text-2xl text-blue-800">在珍</div>
+                        <div class="text-base text-blue-600 mt-3">行政・排程</div>
                     </div>
-                    <div class="bg-purple-50 border-2 border-purple-200 rounded-2xl p-5 text-center">
-                        <div class="text-4xl mb-2">✨</div>
-                        <div class="font-bold text-xl text-purple-800">佩君</div>
-                        <div class="text-sm text-purple-600 mt-1">行銷・對外接洽</div>
+                    <div class="participant-card border-purple-300 bg-purple-50">
+                        <div class="text-5xl mb-3">✨</div>
+                        <div class="font-bold text-2xl text-purple-800">佩君</div>
+                        <div class="text-base text-purple-600 mt-3">行銷・對外接洽</div>
                     </div>
-                    <div class="bg-teal-50 border-2 border-teal-200 rounded-2xl p-5 text-center">
-                        <div class="text-4xl mb-2">🎬</div>
-                        <div class="font-bold text-xl text-teal-800">佳伶（Lavi）</div>
-                        <div class="text-sm text-teal-600 mt-1">行銷設計・預算</div>
+                    <div class="participant-card border-teal-300 bg-teal-50">
+                        <div class="text-5xl mb-3">🎬</div>
+                        <div class="font-bold text-2xl text-teal-800">佳伶（Lavi）</div>
+                        <div class="text-base text-teal-600 mt-3">行銷設計・預算</div>
                     </div>
                 </div>
             </section>
@@ -130,68 +126,68 @@
             <section>
                 <div class="flex items-center gap-3 mb-8">
                     <span class="text-4xl">📒</span>
-                    <h2 class="section-header text-3xl font-semibold text-slate-900">會議大綱</h2>
+                    <h2 class="text-3xl font-bold">會議大綱</h2>
+                    <span class="text-blue-600 text-base font-medium px-4 py-1 bg-blue-100 rounded-3xl">線上新書發表會規劃與流程</span>
                 </div>
 
-                <div class="space-y-10">
+                <div class="space-y-12">
 
                     <!-- 目標與定位 -->
-                    <div class="bg-white rounded-3xl p-8 border border-slate-200">
-                        <div class="flex items-center gap-3 mb-4">
-                            <span class="text-3xl">🎯</span>
-                            <h3 class="text-2xl font-bold">目標與定位</h3>
-                        </div>
-                        <p class="text-xl text-slate-700 leading-relaxed">
+                    <div>
+                        <h3 class="subsection-title mb-4 flex items-center gap-2">
+                            <span class="text-3xl">🎯</span> 目標與定位
+                        </h3>
+                        <div class="bg-white border border-slate-200 rounded-3xl p-8 text-xl text-slate-700 leading-relaxed">
                             線上新書發表會「一定要辦」，重點雙軌：<strong>推廣新書</strong>與<strong>引導報名工作坊</strong>。<br>
-                            以書店連結進行購書，不自行賣書；現場將安排工作坊之銷售轉換。
-                        </p>
+                            以書店連結進行購書，不自行賣書；現場將安排工作坊之銷售轉換（由行銷統籌負責銷講）。
+                        </div>
                     </div>
 
                     <!-- 議程與時長 -->
-                    <div class="bg-white rounded-3xl p-8 border border-slate-200">
-                        <div class="flex items-center gap-3 mb-4">
-                            <span class="text-3xl">⏱️</span>
-                            <h3 class="text-2xl font-bold">議程與時長</h3>
+                    <div>
+                        <h3 class="subsection-title mb-4 flex items-center gap-2">
+                            <span class="text-3xl">⏱️</span> 議程與時長
+                        </h3>
+                        <div class="bg-white border border-slate-200 rounded-3xl p-8">
+                            <ul class="space-y-5 text-xl text-slate-700">
+                                <li class="flex gap-4">
+                                    <span class="font-medium text-emerald-600 text-2xl">✓</span>
+                                    建議線上一場 <strong>1.5 小時</strong>為佳（專注度考量）
+                                </li>
+                                <li class="flex gap-4">
+                                    <span class="font-medium text-emerald-600 text-2xl">✓</span>
+                                    主持暖場與收尾各約 15 分鐘，作者主講約 60 分鐘，含適度互動與 QA
+                                </li>
+                                <li class="flex gap-4">
+                                    <span class="font-medium text-emerald-600 text-2xl">✓</span>
+                                    若需兩小時，則保留更充裕 QA 時間
+                                </li>
+                            </ul>
                         </div>
-                        <ul class="space-y-4 text-xl">
-                            <li class="flex gap-4 items-start">
-                                <span class="text-emerald-500 text-2xl">✓</span>
-                                建議線上一場 <strong>1.5 小時</strong>為佳（專注度考量）
-                            </li>
-                            <li class="flex gap-4 items-start">
-                                <span class="text-emerald-500 text-2xl">✓</span>
-                                主持暖場與收尾各約 15 分鐘，作者主講約 60 分鐘，含適度互動與 QA
-                            </li>
-                            <li class="flex gap-4 items-start">
-                                <span class="text-emerald-500 text-2xl">✓</span>
-                                若需兩小時，則保留更充裕 QA 時間
-                            </li>
-                        </ul>
                     </div>
 
                     <!-- 新書發表會時程 -->
-                    <div class="bg-white rounded-3xl p-8 border border-slate-200">
-                        <div class="flex items-center gap-3 mb-6">
-                            <span class="text-3xl">📆</span>
-                            <h3 class="text-2xl font-bold">新書發表會時程</h3>
-                        </div>
+                    <div>
+                        <h3 class="subsection-title mb-4 flex items-center gap-2">
+                            <span class="text-3xl">📆</span> 新書發表會時程
+                        </h3>
                         <div class="grid md:grid-cols-2 gap-6">
-                            <div class="bg-gradient-to-br from-blue-50 to-white border-2 border-blue-200 rounded-2xl p-6 flex items-center gap-6">
+                            <div class="bg-gradient-to-br from-blue-50 to-white border-2 border-blue-200 rounded-3xl p-8 flex items-center gap-6">
                                 <div class="text-center">
-                                    <div class="text-xs font-medium text-blue-600 tracking-widest">第1場</div>
+                                    <div class="text-sm font-medium text-blue-600 tracking-widest">第1場</div>
                                     <div class="text-5xl font-bold text-blue-700">6/5</div>
-                                    <div class="text-sm text-blue-500">星期五</div>
+                                    <div class="text-base text-blue-500">星期五</div>
                                 </div>
                                 <div>
                                     <p class="text-2xl font-medium">20:00 – 21:30</p>
                                     <p class="text-lg text-slate-600 mt-2">主持人：大樹</p>
                                 </div>
                             </div>
-                            <div class="bg-gradient-to-br from-blue-50 to-white border-2 border-blue-200 rounded-2xl p-6 flex items-center gap-6">
+                            <div class="bg-gradient-to-br from-blue-50 to-white border-2 border-blue-200 rounded-3xl p-8 flex items-center gap-6">
                                 <div class="text-center">
-                                    <div class="text-xs font-medium text-blue-600 tracking-widest">第2場</div>
+                                    <div class="text-sm font-medium text-blue-600 tracking-widest">第2場</div>
                                     <div class="text-5xl font-bold text-blue-700">7/10</div>
-                                    <div class="text-sm text-blue-500">星期五</div>
+                                    <div class="text-base text-blue-500">星期五</div>
                                 </div>
                                 <div>
                                     <p class="text-2xl font-medium">20:00 – 21:30</p>
@@ -205,107 +201,113 @@
                     <div class="bg-slate-900 text-white rounded-3xl p-10">
                         <div class="flex items-center gap-3 mb-6">
                             <span class="text-4xl">💬</span>
-                            <h3 class="text-2xl font-bold">線上座談會</h3>
+                            <h3 class="text-2xl font-bold">線上座談會（訪談式內容行銷）</h3>
                         </div>
-                        <div class="grid md:grid-cols-2 gap-8 mb-8">
+                        <div class="grid md:grid-cols-2 gap-10 mb-8">
                             <div>
-                                <p class="font-bold text-lg mb-3">形式與目的</p>
+                                <p class="font-medium text-xl mb-3">形式與目的</p>
                                 <p class="text-slate-300 leading-relaxed text-lg">
                                     非作者演講，改由主持人訪談作者，聚焦觀念、案例與答疑。<br>
-                                    主要產出可重複運用之素材（錄音/錄影/短影音），增曝光、鋪陳理念，間接帶動工作坊轉換。
+                                    主要產出可重複運用之素材（錄音/錄影/短影音），增曝光、鋪陳理念，間接帶動工作坊轉換，降低銷售感。
                                 </p>
                             </div>
                             <div>
-                                <p class="font-bold text-lg mb-3">互動設計與資料收集</p>
+                                <p class="font-medium text-xl mb-3">互動設計與資料收集</p>
                                 <p class="text-slate-300 leading-relaxed text-lg">
                                     以報名表（Google表單）先收集參與者資料與提問；會中由主持人即時點名與轉述聊天室問題，提升參與感。
                                 </p>
                             </div>
                         </div>
 
-                        <!-- 座談會時程 -->
                         <div>
-                            <p class="font-bold text-lg mb-4 flex items-center gap-2"><i class="fa-solid fa-calendar-days"></i> 座談會時程</p>
+                            <p class="font-medium text-xl mb-4 flex items-center gap-2"><i class="fa-solid fa-calendar-days"></i> 座談會時程</p>
                             <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
-                                <div class="bg-white/10 backdrop-blur-md rounded-2xl p-4 text-center">
-                                    <div class="text-sm opacity-75">6/14（日）</div>
+                                <div class="bg-white/10 backdrop-blur-md rounded-3xl p-5 text-center">
+                                    <div class="text-base opacity-75">6/14（日）</div>
                                     <div class="text-2xl font-bold">20:00–21:30</div>
                                 </div>
-                                <div class="bg-white/10 backdrop-blur-md rounded-2xl p-4 text-center">
-                                    <div class="text-sm opacity-75">6/21（日）</div>
+                                <div class="bg-white/10 backdrop-blur-md rounded-3xl p-5 text-center">
+                                    <div class="text-base opacity-75">6/21（日）</div>
                                     <div class="text-2xl font-bold">20:00–21:30</div>
                                 </div>
-                                <div class="bg-white/10 backdrop-blur-md rounded-2xl p-4 text-center">
-                                    <div class="text-sm opacity-75">7/12（日）</div>
+                                <div class="bg-white/10 backdrop-blur-md rounded-3xl p-5 text-center">
+                                    <div class="text-base opacity-75">7/12（日）</div>
                                     <div class="text-2xl font-bold">20:00–21:30</div>
                                 </div>
-                                <div class="bg-white/10 backdrop-blur-md rounded-2xl p-4 text-center">
-                                    <div class="text-sm opacity-75">7/19（日）</div>
+                                <div class="bg-white/10 backdrop-blur-md rounded-3xl p-5 text-center">
+                                    <div class="text-base opacity-75">7/19（日）</div>
                                     <div class="text-2xl font-bold">20:00–21:30</div>
                                 </div>
                             </div>
+                            <p class="text-base text-blue-200 mt-6">主持人：行銷統籌｜形式為「週末小品、輕鬆對談」｜6月偏重內容曝光鋪量、7月加大收單轉換</p>
                         </div>
                     </div>
 
                     <!-- KPI 與行銷 -->
                     <div class="grid md:grid-cols-2 gap-8">
-                        <div class="bg-white rounded-3xl p-8 border border-slate-200">
-                            <div class="flex items-center gap-3 mb-4">
-                                <span class="text-3xl">📊</span>
-                                <h3 class="text-xl font-bold">KPI 與成效追蹤</h3>
+                        <div class="space-y-6">
+                            <div>
+                                <h3 class="subsection-title mb-3">目標受眾、訊息與 KPI</h3>
+                                <div class="bg-white rounded-3xl p-7 border">
+                                    <p class="font-medium text-slate-600 mb-2">受眾界定與訊息主軸</p>
+                                    <p class="text-lg text-slate-700">以「溝通」為大漏斗議題，延伸至「領導、人脈/人際經營」。適合現任或未來領導者、重視人際溝通者。</p>
+                                </div>
                             </div>
-                            <ul class="space-y-4 text-lg">
-                                <li class="flex gap-3 items-start">
-                                    <span class="text-emerald-500 text-xl">✓</span>
-                                    <div><strong>工作坊轉換率</strong>：以 15–20% 為目標（10 位出席帶動 1–2 位購買工作坊）</div>
-                                </li>
-                                <li class="flex gap-3 items-start">
-                                    <span class="text-emerald-500 text-xl">✓</span>
-                                    <div><strong>賣書數據</strong>：以出版社購書連結為主統計</div>
-                                </li>
-                            </ul>
+                            <div>
+                                <p class="font-medium text-slate-600 mb-3">KPI 與成效追蹤</p>
+                                <ul class="space-y-3 text-lg">
+                                    <li class="flex items-start gap-3 bg-white rounded-3xl px-6 py-5 border">
+                                        <span class="text-emerald-500 text-xl">📈</span>
+                                        <div><strong>工作坊轉換率</strong>：以 15–20% 為目標（10 位出席帶動 1–2 位購買工作坊）</div>
+                                    </li>
+                                    <li class="flex items-start gap-3 bg-white rounded-3xl px-6 py-5 border">
+                                        <span class="text-emerald-500 text-xl">📈</span>
+                                        <div><strong>賣書數據</strong>：以出版社購書連結為主統計</div>
+                                    </li>
+                                </ul>
+                            </div>
                         </div>
-                        <div class="bg-white rounded-3xl p-8 border border-slate-200">
-                            <div class="flex items-center gap-3 mb-4">
-                                <span class="text-3xl">📣</span>
-                                <h3 class="text-xl font-bold">行銷推廣</h3>
+
+                        <div>
+                            <h3 class="subsection-title mb-3">行銷推廣與資源運用</h3>
+                            <div class="bg-white rounded-3xl p-7 border space-y-6 text-lg text-slate-700">
+                                <p>EDM 由行銷統籌製作；全員各自動員人脈擴散；佳伶（Lavi）以頻道與 LINE@ 推廣；同步接洽出版社上架官網/渠道露出。</p>
+                                <div class="flex items-center gap-2 text-sm uppercase tracking-widest bg-amber-100 text-amber-700 px-5 py-3 rounded-3xl w-fit">
+                                    <i class="fa-solid fa-shield-halved"></i>
+                                    公私分明：大量宣傳以個人名義擴散，不動用 BNI 區域「公務」資源
+                                </div>
                             </div>
-                            <p class="text-lg text-slate-700">
-                                EDM + 全員分眾擴散 + 出版社官網露出<br>
-                                公私分明原則：個人名義大量邀約
-                            </p>
                         </div>
                     </div>
 
                     <!-- 實體活動 -->
-                    <div class="bg-white rounded-3xl p-8 border border-slate-200">
-                        <div class="flex items-center gap-3 mb-6">
-                            <span class="text-3xl">🏛️</span>
-                            <h3 class="text-2xl font-bold">實體活動</h3>
-                        </div>
-                        <div class="grid md:grid-cols-3 gap-6 text-lg">
+                    <div>
+                        <h3 class="subsection-title mb-4 flex items-center gap-2">
+                            <span class="text-3xl">🏛️</span> 實體活動與獎項申請
+                        </h3>
+                        <div class="bg-white border border-slate-200 rounded-3xl p-8 grid md:grid-cols-3 gap-8">
                             <div>
-                                <p class="font-bold text-blue-600 mb-3">工作坊檔期</p>
-                                <ul class="space-y-3">
-                                    <li>臺南：8/19–8/20</li>
-                                    <li>臺中：9 月</li>
+                                <p class="text-sm font-bold text-slate-500 uppercase tracking-widest mb-3">工作坊檔期</p>
+                                <ul class="space-y-4 text-lg">
+                                    <li>臺南工作坊：8/19–8/20</li>
+                                    <li>臺中工作坊：9 月</li>
                                     <li>11 月場次待定</li>
                                 </ul>
                             </div>
                             <div>
-                                <p class="font-bold text-amber-600 mb-3">高雄實體發表會</p>
-                                <p>優先爭取高雄總圖或友善學會場地（含免費場地可能）</p>
+                                <p class="text-sm font-bold text-slate-500 uppercase tracking-widest mb-3">高雄實體發表會</p>
+                                <p class="text-lg text-slate-700">優先爭取高雄總圖或友善學會場地（含免費場地可能）</p>
                             </div>
                             <div>
-                                <p class="font-bold text-emerald-600 mb-3">金書獎申請</p>
-                                <p>經濟部主辦，團隊優先評估申請</p>
+                                <p class="text-sm font-bold text-slate-500 uppercase tracking-widest mb-3">金書獎申請</p>
+                                <p class="text-lg text-slate-700">經濟部主辦，團隊優先評估申請</p>
                             </div>
                         </div>
                     </div>
                 </div>
             </section>
 
-            <!-- 概覽 -->
+            <!-- 會議結論 -->
             <section class="bg-gradient-to-r from-blue-600 to-indigo-600 text-white rounded-3xl px-10 py-12">
                 <div class="flex items-center gap-3 mb-8">
                     <span class="text-4xl">📋</span>
@@ -314,157 +316,116 @@
                 <ul class="grid md:grid-cols-2 gap-y-6 text-xl leading-relaxed">
                     <li class="flex gap-4"><span class="font-bold text-3xl text-white/50">01</span>決議辦理 2 場線上新書發表會（6/5、7/10），大樹主持</li>
                     <li class="flex gap-4"><span class="font-bold text-3xl text-white/50">02</span>決議辦理 4 場線上座談會（6/14、6/21、7/12、7/19）</li>
-                    <li class="flex gap-4"><span class="font-bold text-3xl text-white/50">03</span>行銷：EDM＋全員擴散＋出版社露出</li>
-                    <li class="flex gap-4"><span class="font-bold text-3xl text-white/50">04</span>KPI：工作坊轉換率 15–20%</li>
+                    <li class="flex gap-4"><span class="font-bold text-3xl text-white/50">03</span>行銷採 EDM＋全員擴散＋出版社露出</li>
+                    <li class="flex gap-4"><span class="font-bold text-3xl text-white/50">04</span>KPI 以工作坊轉換率 15–20% 為目標</li>
                     <li class="flex gap-4"><span class="font-bold text-3xl text-white/50">05</span>受眾以「溝通」為入口，延展至「領導與人際」</li>
-                    <li class="flex gap-4"><span class="font-bold text-3xl text-white/50">06</span>實體進度：臺南 8/19–20、臺中 9 月</li>
-                    <li class="flex gap-4"><span class="font-bold text-3xl text-white/50">07</span>優先評估經濟部金書獎</li>
+                    <li class="flex gap-4"><span class="font-bold text-3xl text-white/50">06</span>公私分明：個人名義大量邀約</li>
+                    <li class="flex gap-4"><span class="font-bold text-3xl text-white/50">07</span>實體進度：臺南 8/19–20、臺中 9 月</li>
+                    <li class="flex gap-4"><span class="font-bold text-3xl text-white/50">08</span>優先評估經濟部金書獎</li>
                 </ul>
             </section>
 
             <!-- 待辦清單 -->
             <section>
-                <div class="flex items-center gap-3 mb-8">
-                    <span class="text-4xl">🎯</span>
-                    <h2 class="section-header text-3xl font-semibold">待辦清單</h2>
-                    <span class="text-base font-medium px-5 py-2 bg-emerald-100 text-emerald-700 rounded-3xl">含截止日期</span>
+                <div class="flex items-center justify-between mb-8">
+                    <div class="flex items-center gap-3">
+                        <span class="text-4xl">🎯</span>
+                        <h2 class="text-3xl font-bold">待辦清單</h2>
+                    </div>
+                    <span class="text-base font-medium px-5 py-2 bg-emerald-100 text-emerald-700 rounded-3xl">依負責人分組・含截止日期</span>
                 </div>
 
                 <div class="space-y-8">
 
-                    <!-- 曜董 -->
-                    <div class="task-card border-amber-400">
-                        <div class="flex items-center gap-4 mb-5">
-                            <div class="w-12 h-12 bg-amber-100 rounded-2xl flex items-center justify-center text-3xl">👑</div>
-                            <h3 class="text-2xl font-bold text-amber-800">曜董</h3>
-                            <span class="text-sm text-amber-600">總策劃・最終決策</span>
-                        </div>
-                        <ul class="space-y-3 text-lg">
-                            <li class="bg-amber-50 rounded-xl px-5 py-4 flex justify-between items-center">
-                                <span>審核新書發表會與座談會整體規劃</span>
-                                <span class="text-sm text-amber-600 ml-4">持續</span>
-                            </li>
-                            <li class="bg-amber-50 rounded-xl px-5 py-4 flex justify-between items-center">
-                                <span>確認預算與付款時程</span>
-                                <span class="text-sm text-amber-600 ml-4">本週內</span>
-                            </li>
-                        </ul>
-                    </div>
-
                     <!-- 大樹 -->
-                    <div class="task-card border-emerald-400">
+                    <div class="border-l-4 border-emerald-400 pl-8">
                         <div class="flex items-center gap-4 mb-5">
                             <div class="w-12 h-12 bg-emerald-100 rounded-2xl flex items-center justify-center text-3xl">🌳</div>
                             <h3 class="text-2xl font-bold text-emerald-800">大樹</h3>
-                            <span class="text-sm text-emerald-600">主持・流程統籌</span>
+                            <span class="text-base text-emerald-600">主持・流程統籌</span>
                         </div>
-                        <ul class="space-y-3 text-lg">
-                            <li class="bg-emerald-50 rounded-xl px-5 py-4 flex justify-between items-center">
-                                <span>完成兩場新書發表會詳細議程與主持腳本</span>
-                                <span class="text-sm text-emerald-600 ml-4">5/26</span>
-                            </li>
-                            <li class="bg-emerald-50 rounded-xl px-5 py-4 flex justify-between items-center">
-                                <span>與團隊協調 Cue 點與轉場語</span>
-                                <span class="text-sm text-emerald-600 ml-4">5/28</span>
-                            </li>
-                            <li class="bg-emerald-50 rounded-xl px-5 py-4 flex justify-between items-center">
-                                <span>現場控時與互動引導</span>
-                                <span class="text-sm text-emerald-600 ml-4">6/5 起</span>
-                            </li>
+                        <ul class="space-y-3">
+                            <li class="task-item"><span>完成兩場新書發表會詳細議程與主持腳本</span><span class="text-sm font-medium text-slate-400 ml-4">5/26</span></li>
+                            <li class="task-item"><span>與行銷統籌協調 Cue 點與轉場語</span><span class="text-sm font-medium text-slate-400 ml-4">5/28</span></li>
+                            <li class="task-item"><span>現場控時與互動引導</span><span class="text-sm font-medium text-slate-400 ml-4">6/5 起</span></li>
                         </ul>
                     </div>
 
                     <!-- 在珍 -->
-                    <div class="task-card border-blue-400">
+                    <div class="border-l-4 border-blue-400 pl-8">
                         <div class="flex items-center gap-4 mb-5">
                             <div class="w-12 h-12 bg-blue-100 rounded-2xl flex items-center justify-center text-3xl">📋</div>
                             <h3 class="text-2xl font-bold text-blue-800">在珍</h3>
-                            <span class="text-sm text-blue-600">行政・排程</span>
+                            <span class="text-base text-blue-600">行政・排程</span>
                         </div>
-                        <ul class="space-y-3 text-lg">
-                            <li class="bg-blue-50 rounded-xl px-5 py-4 flex justify-between items-center">
-                                <span>確認並鎖定活動檔期與會議室連結</span>
-                                <span class="text-sm text-blue-600 ml-4">5/21</span>
-                            </li>
-                            <li class="bg-blue-50 rounded-xl px-5 py-4 flex justify-between items-center">
-                                <span>建立報名表（含基本資料收集、事前提問欄位）</span>
-                                <span class="text-sm text-blue-600 ml-4">5/22</span>
-                            </li>
-                            <li class="bg-blue-50 rounded-xl px-5 py-4 flex justify-between items-center">
-                                <span>匯整報名名單與問題（活動前一日提供）</span>
-                                <span class="text-sm text-blue-600 ml-4">活動前</span>
-                            </li>
+                        <ul class="space-y-3">
+                            <li class="task-item"><span>確認並鎖定活動檔期與會議室連結</span><span class="text-sm font-medium text-slate-400 ml-4">5/21</span></li>
+                            <li class="task-item"><span>建立報名表（含基本資料收集、事前提問欄位）</span><span class="text-sm font-medium text-slate-400 ml-4">5/22</span></li>
+                            <li class="task-item"><span>匯整報名名單與問題（活動前一日提供）</span><span class="text-sm font-medium text-slate-400 ml-4">活動前</span></li>
                         </ul>
                     </div>
 
                     <!-- 佩君 -->
-                    <div class="task-card border-purple-400">
+                    <div class="border-l-4 border-purple-400 pl-8">
                         <div class="flex items-center gap-4 mb-5">
                             <div class="w-12 h-12 bg-purple-100 rounded-2xl flex items-center justify-center text-3xl">✨</div>
                             <h3 class="text-2xl font-bold text-purple-800">佩君</h3>
-                            <span class="text-sm text-purple-600">行銷・對外接洽</span>
+                            <span class="text-base text-purple-600">行銷・對外接洽</span>
                         </div>
-                        <ul class="space-y-3 text-lg">
-                            <li class="bg-purple-50 rounded-xl px-5 py-4 flex justify-between items-center">
-                                <span>製作兩場新書發表會 EDM（含購書連結、活動議程、CTA）</span>
-                                <span class="text-sm text-purple-600 ml-4">5/22</span>
-                            </li>
-                            <li class="bg-purple-50 rounded-xl px-5 py-4 flex justify-between items-center">
-                                <span>接洽出版社上架官網/渠道露出</span>
-                                <span class="text-sm text-purple-600 ml-4">5/24</span>
-                            </li>
-                            <li class="bg-purple-50 rounded-xl px-5 py-4 flex justify-between items-center">
-                                <span>研究金書獎申請條件</span>
-                                <span class="text-sm text-purple-600 ml-4">5/30</span>
-                            </li>
+                        <ul class="space-y-3">
+                            <li class="task-item"><span>製作兩場新書發表會 EDM（含購書連結、活動議程、CTA）</span><span class="text-sm font-medium text-slate-400 ml-4">5/22</span></li>
+                            <li class="task-item"><span>擔任四場座談會主持與兩場發表會銷講</span><span class="text-sm font-medium text-slate-400 ml-4">6/5 起</span></li>
+                            <li class="task-item"><span>擬定發表會與座談會標準流程時間表</span><span class="text-sm font-medium text-slate-400 ml-4">5/25</span></li>
+                            <li class="task-item"><span>研究經濟部金書獎申請條件</span><span class="text-sm font-medium text-slate-400 ml-4">5/30</span></li>
                         </ul>
                     </div>
 
                     <!-- 佳伶（Lavi） -->
-                    <div class="task-card border-teal-400">
+                    <div class="border-l-4 border-teal-400 pl-8">
                         <div class="flex items-center gap-4 mb-5">
                             <div class="w-12 h-12 bg-teal-100 rounded-2xl flex items-center justify-center text-3xl">🎬</div>
                             <h3 class="text-2xl font-bold text-teal-800">佳伶（Lavi）</h3>
-                            <span class="text-sm text-teal-600">行銷設計・預算</span>
+                            <span class="text-base text-teal-600">行銷設計・預算</span>
                         </div>
-                        <ul class="space-y-3 text-lg">
-                            <li class="bg-teal-50 rounded-xl px-5 py-4 flex justify-between items-center">
-                                <span>重做工作坊預算書：統一稅務口徑，列明四檔損益</span>
-                                <span class="text-sm text-teal-600 ml-4">三日內</span>
-                            </li>
-                            <li class="bg-teal-50 rounded-xl px-5 py-4 flex justify-between items-center">
-                                <span>建置「媒體庫」，匯入歷場可用素材</span>
-                                <span class="text-sm text-teal-600 ml-4">三日內</span>
-                            </li>
-                            <li class="bg-teal-50 rounded-xl px-5 py-4 flex justify-between items-center">
-                                <span>行銷短影音剪輯與社羣操盤方案</span>
-                                <span class="text-sm text-teal-600 ml-4">本週啟動</span>
-                            </li>
+                        <ul class="space-y-3">
+                            <li class="task-item"><span>重做工作坊預算書：統一稅務口徑，列明四檔</span><span class="text-sm font-medium text-slate-400 ml-4">三日內</span></li>
+                            <li class="task-item"><span>臺北劍潭訂金與檔期確認（含餐點方案）</span><span class="text-sm font-medium text-slate-400 ml-4">三日內</span></li>
+                            <li class="task-item"><span>行銷短影音剪輯與社羣操盤方案</span><span class="text-sm font-medium text-slate-400 ml-4">本週啟動</span></li>
+                            <li class="task-item"><span>建置「媒體庫」，匯入歷場素材</span><span class="text-sm font-medium text-slate-400 ml-4">三日內</span></li>
+                        </ul>
+                    </div>
+
+                    <!-- 曜董 -->
+                    <div class="border-l-4 border-amber-400 pl-8">
+                        <div class="flex items-center gap-4 mb-5">
+                            <div class="w-12 h-12 bg-amber-100 rounded-2xl flex items-center justify-center text-3xl">👑</div>
+                            <h3 class="text-2xl font-bold text-amber-800">曜董</h3>
+                            <span class="text-base text-amber-600">總策劃・最終決策</span>
+                        </div>
+                        <ul class="space-y-3">
+                            <li class="task-item"><span>審核行銷規劃與預算</span><span class="text-sm font-medium text-slate-400 ml-4">持續</span></li>
+                            <li class="task-item"><span>確認預算與付款時程</span><span class="text-sm font-medium text-slate-400 ml-4">本週內</span></li>
                         </ul>
                     </div>
 
                     <!-- 全體 -->
-                    <div class="bg-slate-100 rounded-3xl p-8">
-                        <div class="flex items-center gap-4 mb-5">
-                            <div class="w-12 h-12 bg-slate-300 rounded-2xl flex items-center justify-center text-3xl">🤝</div>
-                            <h3 class="text-2xl font-bold text-slate-700">全體</h3>
+                    <div class="grid md:grid-cols-2 gap-6 text-lg">
+                        <div class="bg-slate-100 rounded-3xl p-6">
+                            <p class="font-bold text-xl mb-4">全體（擴散）</p>
+                            <p class="text-slate-700">依人脈網絡擴散 EDM 與活動貼文・活動當日協助聊天室互動</p>
+                            <span class="text-sm text-slate-500 mt-3 block">5/25 起</span>
                         </div>
-                        <ul class="space-y-3 text-lg">
-                            <li class="bg-white rounded-xl px-5 py-4">
-                                依人脈網絡擴散 EDM 與活動貼文
-                                <span class="text-sm text-slate-500 ml-4">5/25 起</span>
-                            </li>
-                            <li class="bg-white rounded-xl px-5 py-4">
-                                活動當日協助聊天室互動
-                                <span class="text-sm text-slate-500 ml-4">活動日</span>
-                            </li>
-                        </ul>
+                        <div class="bg-slate-100 rounded-3xl p-6">
+                            <p class="font-bold text-xl mb-4">出版社窗口</p>
+                            <p class="text-slate-700">提供官方購書連結與活動頁露出</p>
+                            <span class="text-sm text-slate-500 mt-3 block">5/24</span>
+                        </div>
                     </div>
                 </div>
             </section>
 
             <!-- 頁尾 -->
-            <div class="text-center text-slate-400 text-base py-8 border-t">
+            <div class="text-center text-slate-400 text-lg py-8 border-t">
                 會議紀錄｜線上新書發表會規劃與流程<br>
                 2026-05-18｜參與者：曜董、大樹、在珍、佩君、佳伶（Lavi）
             </div>
