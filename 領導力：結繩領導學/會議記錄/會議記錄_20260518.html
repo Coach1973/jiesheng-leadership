@@ -1,0 +1,522 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>📒 海餅乾俱樂部｜新書發表會與現場作業 會議記錄</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;500;700&display=swap');
+
+        body {
+            font-family: 'Noto Sans TC', system-ui, sans-serif;
+            font-size: 18px;
+            line-height: 1.8;
+        }
+
+        h1 { font-size: 2.5rem; }
+        h2 { font-size: 1.75rem; }
+        h3 { font-size: 1.35rem; }
+
+        .section-card {
+            background: white;
+            border-radius: 20px;
+            padding: 2rem;
+            margin-bottom: 1.5rem;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+        }
+
+        .participant-tag {
+            display: inline-block;
+            padding: 0.25rem 0.75rem;
+            border-radius: 9999px;
+            font-size: 0.85rem;
+            font-weight: 600;
+        }
+
+        .role-badge {
+            background: #e0f2fe;
+            color: #0369a1;
+            padding: 0.2rem 0.6rem;
+            border-radius: 8px;
+            font-size: 0.8rem;
+            font-weight: 600;
+            margin-left: 0.5rem;
+        }
+
+        .task-item {
+            padding: 1rem 1.25rem;
+            border-left: 4px solid;
+            margin-bottom: 1rem;
+            background: #f8fafc;
+            border-radius: 12px;
+        }
+
+        .task-item.urgent {
+            border-color: #ef4444;
+            background: #fef2f2;
+        }
+
+        .task-item.normal {
+            border-color: #22c55e;
+        }
+
+        .summary-box {
+            background: linear-gradient(135deg, #1e3a5f, #2d5a87);
+            color: white;
+            border-radius: 20px;
+            padding: 2rem;
+        }
+    </style>
+</head>
+<body class="bg-gray-50 text-gray-800">
+    <!-- 頂部標題 -->
+    <div class="bg-gradient-to-r from-blue-800 to-cyan-600 text-white py-12 px-6">
+        <div class="max-w-5xl mx-auto">
+            <div class="flex items-center gap-4 mb-6">
+                <span class="text-6xl">📒</span>
+                <div>
+                    <h1 class="text-4xl font-bold">會議記錄</h1>
+                    <p class="text-2xl opacity-90 mt-2">海餅乾俱樂部｜新書發表會與現場作業</p>
+                </div>
+            </div>
+            <div class="bg-white/20 backdrop-blur rounded-2xl px-6 py-3 inline-block">
+                📅 2026年5月18日
+            </div>
+        </div>
+    </div>
+
+    <div class="max-w-5xl mx-auto px-6 py-10">
+
+        <!-- 參與者 -->
+        <div class="section-card mb-8">
+            <h2 class="text-2xl font-bold text-blue-700 mb-6 flex items-center gap-3">
+                👥 參與者與分工
+            </h2>
+            <div class="grid grid-cols-2 md:grid-cols-5 gap-4">
+                <div class="text-center p-4 bg-blue-50 rounded-xl">
+                    <div class="text-3xl mb-2">👑</div>
+                    <div class="font-bold text-lg">曜董</div>
+                    <div class="text-sm text-gray-600">總策劃・最終決策</div>
+                </div>
+                <div class="text-center p-4 bg-amber-50 rounded-xl">
+                    <div class="text-3xl mb-2">🌳</div>
+                    <div class="font-bold text-lg">大樹</div>
+                    <div class="text-sm text-gray-600">主講人・資源整合</div>
+                </div>
+                <div class="text-center p-4 bg-purple-50 rounded-xl">
+                    <div class="text-3xl mb-2">📋</div>
+                    <div class="font-bold text-lg">在珍</div>
+                    <div class="text-sm text-gray-600">統籌協調</div>
+                </div>
+                <div class="text-center p-4 bg-pink-50 rounded-xl">
+                    <div class="text-3xl mb-2">✨</div>
+                    <div class="font-bold text-lg">佩君</div>
+                    <div class="text-sm text-gray-600">執行統籌・對外接洽</div>
+                </div>
+                <div class="text-center p-4 bg-teal-50 rounded-xl">
+                    <div class="text-3xl mb-2">🎬</div>
+                    <div class="font-bold text-lg">佳伶（Lavi）</div>
+                    <div class="text-sm text-gray-600">行銷・預算・媒體庫</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- 一、新書發表會 -->
+        <div class="section-card">
+            <h2 class="text-2xl font-bold text-amber-600 mb-6 flex items-center gap-3">
+                📍 新書發表會與現場作業
+            </h2>
+
+            <div class="space-y-6">
+                <!-- 臺南場 -->
+                <div class="task-item normal">
+                    <div class="flex items-center gap-3 mb-4">
+                        <span class="text-2xl">📦</span>
+                        <h3 class="font-bold text-xl">臺南場結算與庫存</h3>
+                    </div>
+                    <ul class="space-y-2 text-lg pl-8">
+                        <li>✅ 款項已結算（紙本完成）</li>
+                        <li>📤 LINE與雲端紀錄待上傳</li>
+                        <li>📚 目前庫存：<strong>臺南 70本</strong> + 曜董簽名書</li>
+                        <li class="text-red-600 font-medium">⚠️ 會後立即完成數量與收支上傳</li>
+                    </ul>
+                    <div class="mt-3 text-sm text-gray-500">
+                        <span class="participant-tag bg-amber-100 text-amber-700">佩君</span> 負責上傳
+                    </div>
+                </div>
+
+                <!-- Judy專場 -->
+                <div class="task-item urgent">
+                    <div class="flex items-center gap-3 mb-4">
+                        <span class="text-2xl">⭐</span>
+                        <h3 class="font-bold text-xl">Judy專場（最後一場）</h3>
+                    </div>
+                    <ul class="space-y-2 text-lg pl-8">
+                        <li>💰 Judy區域辦公室一次購買 <strong>80本</strong> 並直接付款</li>
+                        <li>✍️ 80本需預簽名並於活動前送達</li>
+                        <li>📚 現場空白書由臺南庫存供應</li>
+                        <li class="text-red-600 font-medium">🚫 現場不擺攤、不攝影、不放「乾淨世界」物料</li>
+                        <li>👥 僅三位團隊成員以「數位小編」身份協助</li>
+                        <li>🔑 佩君出具最終文字版確認後，由曜董覆核</li>
+                        <li>🎤 當天全程由Judy主持，大樹不需到場</li>
+                        <li>🚗 交通由佩君開車支援</li>
+                    </ul>
+                    <div class="mt-3 text-sm text-gray-500">
+                        <span class="participant-tag bg-pink-100 text-pink-700">佩君</span> 統籌確認
+                        <span class="participant-tag bg-amber-100 text-amber-700 ml-2">曜董</span> 覆核
+                    </div>
+                </div>
+
+                <!-- 高雄場 -->
+                <div class="task-item normal">
+                    <div class="flex items-center gap-3 mb-4">
+                        <span class="text-2xl">🗺️</span>
+                        <h3 class="font-bold text-xl">高雄場可行性與動員策略</h3>
+                    </div>
+                    <p class="text-lg mb-4">原則同意推進（具戰略意義：導流臺南工作坊）</p>
+                    <ul class="space-y-2 text-lg pl-8">
+                        <li>🗓️ 時間以總圖檔期（7/16、7/23、7/25擇一）</li>
+                        <li>📣 先以「三個預計時段」進行市場預告／意向調查</li>
+                        <li>📆 高雄平日動員優於假日</li>
+                        <li>🤝 動員主力：BNI、各協會／讀書會</li>
+                        <li>🚩 設定最低人數門檻，未達則轉小型讀書會</li>
+                        <li>📞 Lavi與佩君分頭接觸各分會董顧／Helper</li>
+                    </ul>
+                    <div class="mt-3 text-sm text-gray-500">
+                        <span class="participant-tag bg-teal-100 text-teal-700">佳伶(Lavi)</span> +
+                        <span class="participant-tag bg-pink-100 text-pink-700">佩君</span> 分頭執行
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- 二、外部合作 -->
+        <div class="section-card">
+            <h2 class="text-2xl font-bold text-cyan-600 mb-6 flex items-center gap-3">
+                🌐 外部合作與Podcast／媒體
+            </h2>
+
+            <div class="grid md:grid-cols-2 gap-6">
+                <div class="p-5 bg-gray-50 rounded-xl">
+                    <div class="flex items-center gap-3 mb-3">
+                        <span class="text-2xl">📺</span>
+                        <span class="font-bold text-lg">出版社（大晴分會）發表＋錄影</span>
+                    </div>
+                    <p class="text-gray-600">對方主辦、曜董無償演講。團隊不動員，版權由對方自行處理。</p>
+                </div>
+
+                <div class="p-5 bg-gray-50 rounded-xl">
+                    <div class="flex items-center gap-3 mb-3">
+                        <span class="text-2xl">🎙️</span>
+                        <span class="font-bold text-lg">獨角採訪</span>
+                    </div>
+                    <p class="text-green-600 font-medium">僅採免費方案。佩君與Fanny對接確認規格與授權。</p>
+                </div>
+
+                <div class="p-5 bg-gray-50 rounded-xl">
+                    <div class="flex items-center gap-3 mb-3">
+                        <span class="text-2xl">🏮</span>
+                        <span class="font-bold text-lg">鹿港錄製＋讀書會</span>
+                    </div>
+                    <p class="text-gray-600">Package錄製必須免費。佩君書面確認責任分工。</p>
+                </div>
+
+                <div class="p-5 bg-green-50 rounded-xl border-2 border-green-200">
+                    <div class="flex items-center gap-3 mb-3">
+                        <span class="text-2xl">💻</span>
+                        <span class="font-bold text-lg">線上新書發表會</span>
+                    </div>
+                    <p class="text-green-700 font-bold">決議必辦！擴大觸及與鋪墊工作坊。</p>
+                    <span class="participant-tag bg-pink-100 text-pink-700 mt-2">佩君</span> 統籌
+                </div>
+
+                <div class="p-5 bg-gray-50 rounded-xl">
+                    <div class="flex items-center gap-3 mb-3">
+                        <span class="text-2xl">🙌</span>
+                        <span class="font-bold text-lg">公益講座（尚政老師）</span>
+                    </div>
+                    <p class="text-gray-600">6/7、6/14、6/21 晚間 21:30–22:30 線上</p>
+                    <span class="participant-tag bg-pink-100 text-pink-700 mt-2">佩君</span> 統籌
+                </div>
+
+                <div class="p-5 bg-gray-50 rounded-xl">
+                    <div class="flex items-center gap-3 mb-3">
+                        <span class="text-2xl">📰</span>
+                        <span class="font-bold text-lg">暖暖出版社社羣露出</span>
+                    </div>
+                    <p class="text-gray-600">所有活動資訊同步給暖暖出版社協請轉發。</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- 三、工作坊 -->
+        <div class="section-card">
+            <h2 class="text-2xl font-bold text-violet-600 mb-6 flex items-center gap-3">
+                🎯 工作坊專案（臺南／臺北／臺中）與行銷
+            </h2>
+
+            <!-- 臺南損益 -->
+            <div class="bg-gradient-to-r from-violet-50 to-sky-50 p-6 rounded-2xl mb-6">
+                <h3 class="font-bold text-xl mb-4">📊 臺南工作坊（首發）損益模擬</h3>
+                <div class="grid grid-cols-2 md:grid-cols-4 gap-4 text-center">
+                    <div class="bg-white rounded-xl py-4 shadow-sm">
+                        <div class="text-sm text-gray-500">早鳥價</div>
+                        <div class="text-3xl font-bold text-green-600">1萬元/人</div>
+                    </div>
+                    <div class="bg-white rounded-xl py-4 shadow-sm">
+                        <div class="text-sm text-gray-500">損益平衡</div>
+                        <div class="text-3xl font-bold text-amber-600">約16人</div>
+                    </div>
+                    <div class="bg-white rounded-xl py-4 shadow-sm">
+                        <div class="text-sm text-gray-500">保守目標</div>
+                        <div class="text-3xl font-bold text-sky-600">80人</div>
+                    </div>
+                    <div class="bg-white rounded-xl py-4 shadow-sm">
+                        <div class="text-sm text-gray-500">衝刺目標</div>
+                        <div class="text-3xl font-bold text-violet-600">100人</div>
+                    </div>
+                </div>
+                <p class="mt-4 text-sm text-gray-600">需列保底／損平／50／80／100人四檔淨利</p>
+            </div>
+
+            <!-- 具體項目 -->
+            <div class="grid md:grid-cols-3 gap-4">
+                <div class="p-5 bg-gray-50 rounded-xl">
+                    <div class="font-bold text-lg mb-2">🎬 臺南場素材與行銷</div>
+                    <p class="text-gray-600">短影音剪輯與社羣操盤 ≈ 32,000元<br>優先使用志工素材</p>
+                    <span class="participant-tag bg-teal-100 text-teal-700 mt-3">佳伶(Lavi)</span> 主責
+                </div>
+                <div class="p-5 bg-gray-50 rounded-xl">
+                    <div class="font-bold text-lg mb-2">🎥 線上課程錄製</div>
+                    <p class="text-gray-600">專業錄製報價 48,000元<br>下週與導演確認後啟動</p>
+                </div>
+                <div class="p-5 bg-gray-50 rounded-xl">
+                    <div class="font-bold text-lg mb-2">🗂️ 媒體素材治理</div>
+                    <p class="text-gray-600">佩君彙整<br>Lavi建立「媒體庫」單點門戶</p>
+                </div>
+            </div>
+
+            <!-- 臺北場地 -->
+            <div class="mt-6 p-5 bg-green-50 rounded-xl border-2 border-green-200">
+                <h3 class="font-bold text-xl mb-2">🏙️ 臺北工作坊場地決議</h3>
+                <p class="text-xl"><strong class="text-green-600 text-2xl">✅ 劍潭</strong>（費用優勢、容納80–100+人、可住宿包套）</p>
+                <p class="text-gray-600 mt-2">兩天含餐點估 10.3萬～12.36萬</p>
+                <span class="participant-tag bg-teal-100 text-teal-700 mt-3">佳伶(Lavi)</span> 確認訂金與檔期
+            </div>
+        </div>
+
+        <!-- 四、行事曆 -->
+        <div class="section-card">
+            <h2 class="text-2xl font-bold text-amber-600 mb-6 flex items-center gap-3">
+                🗓️ 近期行事曆
+            </h2>
+            <div class="grid md:grid-cols-2 gap-6">
+                <div class="p-6 bg-amber-100 rounded-xl">
+                    <div class="text-4xl mb-3">💝</div>
+                    <div class="font-bold text-xl">公益講座</div>
+                    <div class="text-lg">6/14（日）21:30–22:30 線上</div>
+                    <span class="participant-tag bg-pink-100 text-pink-700 mt-2">佩君</span> 統籌
+                </div>
+                <div class="p-6 bg-sky-100 rounded-xl">
+                    <div class="text-4xl mb-3">👥</div>
+                    <div class="font-bold text-xl">雙週會調整</div>
+                    <div class="text-lg">6/12（五）南區DNA集培訓後實體小會<br>6/26（五）20:00–21:00 線上會議</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- 五、待辦事項 -->
+        <div class="section-card bg-white">
+            <h2 class="text-2xl font-bold text-red-600 mb-6 flex items-center gap-3">
+                📋 待辦事項（依人員分類）
+            </h2>
+
+            <!-- 佩君 -->
+            <div class="mb-8">
+                <div class="flex items-center gap-3 bg-pink-100 text-pink-700 rounded-xl px-6 py-4 mb-4">
+                    <span class="text-3xl">✨</span>
+                    <span class="font-bold text-2xl">佩君</span>
+                    <span class="text-sm text-pink-600 ml-2">執行統籌・對外接洽</span>
+                </div>
+                <div class="space-y-3 pl-4">
+                    <div class="task-item urgent">
+                        <p class="text-lg">臺南場收支與庫存結算，上傳LINE與雲端（含臺南70本盤點）</p>
+                        <span class="text-sm text-gray-500">⏰ 本日後盡速完成</span>
+                    </div>
+                    <div class="task-item urgent">
+                        <p class="text-lg">出具Judy專場最終確認文案（人員身份、現場規範、協助事項）</p>
+                        <span class="text-sm text-gray-500">⏰ 翌日前送曜董覆核</span>
+                    </div>
+                    <div class="task-item normal">
+                        <p class="text-lg">與Judy確認流程與寄送時程；協調當天簽名與現場空白書調度</p>
+                        <span class="text-sm text-gray-500">⏰ 三日內</span>
+                    </div>
+                    <div class="task-item normal">
+                        <p class="text-lg">對接獨角Fanny確認免費可取素材規格與授權</p>
+                        <span class="text-sm text-gray-500">⏰ 本週內</span>
+                    </div>
+                    <div class="task-item normal">
+                        <p class="text-lg">鹿港錄製＋讀書會：確認主責窗口、是否免費、下午讀書會責任分工</p>
+                        <span class="text-sm text-gray-500">⏰ 三日內書面回覆</span>
+                    </div>
+                    <div class="task-item normal">
+                        <p class="text-lg">統籌線上新書發表會流程、報名/收單、素材與平臺設定</p>
+                        <span class="text-sm text-gray-500">⏰ 本週啟動規劃</span>
+                    </div>
+                    <div class="task-item normal">
+                        <p class="text-lg">統籌6/14公益講座（尚政老師）：議程、QA腳本、素材PPT、動員名單</p>
+                        <span class="text-sm text-gray-500">⏰ 一週內完成對稿</span>
+                    </div>
+                    <div class="task-item normal">
+                        <p class="text-lg">彙整郝振平雲端可用影片/照片連結，於LINE標註並提供Lavi</p>
+                        <span class="text-sm text-gray-500">⏰ 三日內</span>
+                    </div>
+                    <div class="task-item normal">
+                        <p class="text-lg">高雄發表會意向調查：設計訊息稿、三個預計時段預告，與Lavi分工</p>
+                        <span class="text-sm text-gray-500">⏰ 兩週內啟動</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 佳伶(Lavi) -->
+            <div class="mb-8">
+                <div class="flex items-center gap-3 bg-teal-100 text-teal-700 rounded-xl px-6 py-4 mb-4">
+                    <span class="text-3xl">🎬</span>
+                    <span class="font-bold text-2xl">佳伶（Lavi）</span>
+                    <span class="text-sm text-teal-600 ml-2">行銷・預算・媒體庫</span>
+                </div>
+                <div class="space-y-3 pl-4">
+                    <div class="task-item normal">
+                        <p class="text-lg">臺南/臺北/臺中工作坊預算書重做：統一稅務口徑，列明保底/損平/50/80/100四檔</p>
+                        <span class="text-sm text-gray-500">⏰ 三日內</span>
+                    </div>
+                    <div class="task-item normal">
+                        <p class="text-lg">臺北劍潭訂金與檔期確認（含餐點方案）</p>
+                        <span class="text-sm text-gray-500">⏰ 三日內回報</span>
+                    </div>
+                    <div class="task-item normal">
+                        <p class="text-lg">行銷短影音剪輯與社羣操盤方案：以志工素材優先</p>
+                        <span class="text-sm text-gray-500">⏰ 本週啟動</span>
+                    </div>
+                    <div class="task-item normal">
+                        <p class="text-lg">建置「媒體庫」，匯入歷場可用素材，提供團隊單點存取</p>
+                        <span class="text-sm text-gray-500">⏰ 三日內</span>
+                    </div>
+                    <div class="task-item normal">
+                        <p class="text-lg">導演線上會（臺南錄製線上課）：安排與曜董/團隊對齊成片標準</p>
+                        <span class="text-sm text-gray-500">⏰ 下週初</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 大樹 -->
+            <div class="mb-8">
+                <div class="flex items-center gap-3 bg-amber-100 text-amber-700 rounded-xl px-6 py-4 mb-4">
+                    <span class="text-3xl">🌳</span>
+                    <span class="font-bold text-2xl">大樹</span>
+                    <span class="text-sm text-amber-600 ml-2">主講人・資源整合</span>
+                </div>
+                <div class="space-y-3 pl-4">
+                    <div class="task-item normal">
+                        <p class="text-lg">協同高雄發表會動員策略與名單提供；同步思考與臺南工作坊接軌之宣講重點</p>
+                        <span class="text-sm text-gray-500">⏰ 兩週內</span>
+                    </div>
+                    <div class="task-item normal">
+                        <p class="text-lg">盤點過往受眾管道與在地資源，提供佩君/Lavi素材與推薦</p>
+                        <span class="text-sm text-gray-500">⏰ 兩週內</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 曜董 -->
+            <div class="mb-8">
+                <div class="flex items-center gap-3 bg-emerald-100 text-emerald-700 rounded-xl px-6 py-4 mb-4">
+                    <span class="text-3xl">👑</span>
+                    <span class="font-bold text-2xl">曜董</span>
+                    <span class="text-sm text-emerald-600 ml-2">總策劃・最終決策</span>
+                </div>
+                <div class="space-y-3 pl-4">
+                    <div class="task-item urgent">
+                        <p class="text-lg">審閱並核可Judy專場最終確認文案</p>
+                        <span class="text-sm text-gray-500">⏰ 一日內</span>
+                    </div>
+                    <div class="task-item normal">
+                        <p class="text-lg">參與臺南線上課程導演會議，確認課程結構與品質要求</p>
+                        <span class="text-sm text-gray-500">⏰ 下週</span>
+                    </div>
+                    <div class="task-item normal">
+                        <p class="text-lg">提供公益講座可用短片/素材清單交佩君</p>
+                        <span class="text-sm text-gray-500">⏰ 三日內</span>
+                    </div>
+                    <div class="task-item normal">
+                        <p class="text-lg">確認臺南/臺北需預付款項與付款時程</p>
+                        <span class="text-sm text-gray-500">⏰ 本週內</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 共同事項 -->
+            <div>
+                <div class="flex items-center gap-3 bg-gray-200 text-gray-700 rounded-xl px-6 py-4 mb-4">
+                    <span class="text-3xl">🤝</span>
+                    <span class="font-bold text-2xl">共同事項</span>
+                </div>
+                <div class="space-y-3 pl-4">
+                    <div class="task-item normal">
+                        <p class="text-lg">臺中工作坊場地與預算明細上傳</p>
+                        <span class="text-sm text-gray-500">⏰ 明/後天</span>
+                        <span class="participant-tag bg-teal-100 text-teal-700 ml-2">Lavi</span>
+                    </div>
+                    <div class="task-item normal">
+                        <p class="text-lg">新聞稿由Lavi主筆，重要節點即時發布並同步出版社粉專/官網</p>
+                        <span class="text-sm text-gray-500">持續</span>
+                    </div>
+                    <div class="task-item normal">
+                        <p class="text-lg">高雄新書發表三時段預告訊息統一話術與KPI</p>
+                        <span class="text-sm text-gray-500">⏰ 一週內定稿</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- 總結 -->
+        <div class="summary-box">
+            <h2 class="text-3xl font-bold mb-6 flex items-center gap-3">
+                ✅ 會議結論總覽
+            </h2>
+            <div class="grid md:grid-cols-3 gap-6 text-lg">
+                <div>
+                    <p class="text-emerald-300 font-bold mb-2">新書發表會</p>
+                    <ul class="space-y-2">
+                        <li>✅ 臺南場結算待上傳</li>
+                        <li>✅ Judy專場確認規範</li>
+                        <li>✅ 高雄發表同意推進</li>
+                    </ul>
+                </div>
+                <div>
+                    <p class="text-emerald-300 font-bold mb-2">外部合作</p>
+                    <ul class="space-y-2">
+                        <li>✅ 堅持免費或書面確認</li>
+                        <li>✅ 線上新書發表會必辦</li>
+                        <li>✅ 公益講座6/14確認</li>
+                    </ul>
+                </div>
+                <div>
+                    <p class="text-emerald-300 font-bold mb-2">工作坊</p>
+                    <ul class="space-y-2">
+                        <li>✅ 臺南目標80–100人</li>
+                        <li>✅ 臺北場地拍板劍潭</li>
+                        <li>✅ 媒體素材集中治理</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer class="text-center py-8 text-gray-400 text-sm border-t mt-12">
+        <p>海餅乾俱樂部 • 會議記錄 HTML 版</p>
+        <p class="mt-1">字體加大・主題明確・分工清晰</p>
+    </footer>
+</body>
+</html>
