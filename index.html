@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>結繩領導學｜線上座談會</title>
+<title>結繩領導學｜現場座談會 × 實體工作坊</title>
 <style>
 :root {
   --blue: #123a63;
@@ -69,6 +69,8 @@ body.modal-open { overflow:hidden; }
 @media(max-width:768px){ .modal-actions .btn { width:100%; } }
 .btn-secondary { color:#fff; border:1px solid rgba(255,255,255,.28); background:rgba(255,255,255,.07); }
 .btn:hover { transform:translateY(-2px); }
+.btn-secondary:hover { background:linear-gradient(135deg,var(--orange),#ff9e3d); border-color:transparent; color:#fff; box-shadow:0 12px 28px rgba(242,140,40,.35); }
+.btn-primary:hover { background:linear-gradient(135deg,#ff9e3d,var(--orange)); box-shadow:0 16px 32px rgba(242,140,40,.45); }
 .cta-row { display:flex; flex-wrap:wrap; gap:12px; }
 .hero-note { margin-top:12px; font-size:13px; color:rgba(255,255,255,.7); }
 
@@ -209,12 +211,39 @@ body.modal-open { overflow:hidden; }
 /* Footer */
 footer { background:var(--blue-deep); color:rgba(255,255,255,.7); text-align:center; padding:28px 16px; font-size:14px; }
 
+/* ── Floating Nav ── */
+.float-nav {
+  position:fixed; right:18px; top:50%; transform:translateY(-50%);
+  display:flex; flex-direction:column; gap:10px; z-index:9000;
+  opacity:0; pointer-events:none; transition:opacity .3s;
+}
+.float-nav.visible { opacity:1; pointer-events:auto; }
+.float-nav a {
+  display:flex; align-items:center; justify-content:center;
+  width:48px; height:48px; border-radius:50%;
+  background:rgba(11,39,66,.88); backdrop-filter:blur(8px);
+  color:#fff; text-decoration:none; font-size:13px; font-weight:900;
+  box-shadow:0 4px 16px rgba(0,0,0,.22); border:1px solid rgba(255,255,255,.12);
+  transition:.25s ease; position:relative;
+}
+.float-nav a:hover { background:var(--orange); transform:scale(1.1); }
+.float-nav a .nav-tooltip {
+  position:absolute; right:58px; white-space:nowrap;
+  background:rgba(11,39,66,.92); color:#fff; padding:6px 12px;
+  border-radius:8px; font-size:12px; font-weight:700;
+  opacity:0; pointer-events:none; transition:opacity .2s;
+}
+.float-nav a:hover .nav-tooltip { opacity:1; }
+
 @media(max-width:768px){
   .hero-grid,.cards3,.cards4,.split2,.events-grid { grid-template-columns:1fr; }
   .form-grid { grid-template-columns:1fr; }
   h1 { font-size:34px; }
   .section-title { font-size:24px; }
   .hero { padding:52px 0 44px; }
+  .float-nav { right:12px; }
+  .float-nav a { width:42px; height:42px; font-size:12px; }
+  .float-nav a .nav-tooltip { display:none; }
 }
 </style>
 </head>
@@ -226,16 +255,17 @@ footer { background:var(--blue-deep); color:rgba(255,255,255,.7); text-align:cen
     <div class="hero-grid">
       <div>
         <span class="eyebrow">📖 2026 年度重磅新書</span>
-        <h1>結繩領導學<br>線上座談會</h1>
+        <h1>結繩領導學<br>現場座談會 × 實體工作坊</h1>
         <p class="hero-sub">
           你不是不努力，你是少了一套結構。<br>
           一位總工程師教你用理工思維，打造不倒的事業大樓。
         </p>
         <div class="cta-row">
           <a class="btn btn-primary" href="#events">立即報名活動</a>
-          <a class="btn btn-secondary" href="#book-intro">了解這本書</a>
+          <a class="btn btn-secondary" href="#book-intro">瞭解這本書</a>
+          <a class="btn btn-secondary" href="#workshop">瞭解工作坊</a>
         </div>
-        <p class="hero-note">📍 AI 公益講座 2場 + 線上座談會 7場 ‧ 晚上不同時段 ‧ 免費線上報名</p>
+        <p class="hero-note">📍 AI 公益講座 2場 + 線上座談會 10場 ‧ 晚上不同時段 ‧ 免費線上報名</p>
       </div>
       <div>
         <div class="book-card">
@@ -473,44 +503,131 @@ footer { background:var(--blue-deep); color:rgba(255,255,255,.7); text-align:cen
   </div>
 </section>
 
+<!-- ★ 兩天工作坊 -->
+<section id="workshop">
+  <div class="container">
+    <h2 class="section-title">結繩領導學｜兩天工作坊</h2>
+    <p class="section-desc">線上座談會讓你「看懂」這套系統，工作坊讓你「帶回去用」。兩天密集實作，直接拆解你的團隊結構，現場重新設計。</p>
+    <div class="split2">
+      <div class="highlight">
+        <strong style="font-size:18px; color:var(--blue-deep);">工作坊你會帶走什麼？</strong><br><br>
+        ✅ 一份屬於你企業的「結構健檢報告」<br>
+        ✅ 四大工具的實戰操作經驗<br>
+        ✅ 與曜董面對面的深度對話機會<br>
+        ✅ 同頻企業主的高品質人脈連結
+      </div>
+      <div class="highlight">
+        <strong style="font-size:18px; color:var(--blue-deep);">適合誰參加？</strong><br><br>
+        🎯 讀完書想落地的企業主<br>
+        🎯 帶團隊超過 3 年的中高階主管<br>
+        🎯 正在組織轉型或擴張期的經營者<br>
+        🎯 想從「個人硬撐」轉型為「系統承載」的領導者
+      </div>
+    </div>
+    <div style="text-align:center; margin-top:28px;">
+      <div class="cta-row" style="justify-content:center;">
+        <a class="btn btn-secondary" href="#events" style="color:var(--blue-deep); border-color:var(--blue-deep);">報名線上座談會</a>
+        <a class="btn btn-primary" href="javascript:void(0)" id="workshopRegBtn" onclick="document.getElementById('workshopCities').style.display=document.getElementById('workshopCities').style.display==='none'?'block':'none'">立即報名工作坊</a>
+      </div>
+      <div id="workshopCities" style="display:none; margin-top:22px; text-align:left; max-width:560px; margin-left:auto; margin-right:auto;">
+        <div style="background:#fff; border:1px solid rgba(18,58,99,.1); border-radius:var(--radius); padding:22px; margin-bottom:12px; display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:10px;">
+          <div>
+            <strong style="color:var(--blue-deep); font-size:16px;">🔸 台南場</strong><br>
+            <span style="color:var(--muted); font-size:14px;">8/19、20（三、四）｜台南維悅酒店</span>
+          </div>
+          <a class="btn btn-primary" href="https://forms.gle/uLacoA3UqGVg8G4s9" target="_blank" rel="noopener noreferrer" style="font-size:13px; padding:10px 18px;">立即報名</a>
+        </div>
+        <div style="background:#fff; border:1px solid rgba(18,58,99,.1); border-radius:var(--radius); padding:22px; margin-bottom:12px; display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:10px;">
+          <div>
+            <strong style="color:var(--blue-deep); font-size:16px;">🔸 台中場</strong><br>
+            <span style="color:var(--muted); font-size:14px;">9/23、24（三、四）｜朝暮良辰文南館</span>
+          </div>
+          <a class="btn btn-primary" href="https://forms.gle/FFrUM9wAdWSHtUaC8" target="_blank" rel="noopener noreferrer" style="font-size:13px; padding:10px 18px;">立即報名</a>
+        </div>
+        <div style="background:#fff; border:1px solid rgba(18,58,99,.1); border-radius:var(--radius); padding:22px; margin-bottom:12px; display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:10px;">
+          <div>
+            <strong style="color:var(--blue-deep); font-size:16px;">🔸 台北場</strong><br>
+            <span style="color:var(--muted); font-size:14px;">11/25、26（三、四）｜劍潭青年活動中心</span>
+          </div>
+          <a class="btn btn-primary" href="https://forms.gle/2gAqndb6cYASAu2XA" target="_blank" rel="noopener noreferrer" style="font-size:13px; padding:10px 18px;">立即報名</a>
+        </div>
+        <p style="text-align:center; color:var(--muted); font-size:13px; margin-top:8px;">📍 詳細地址將視人數定案後，以 Email 通知</p>
+      </div>
+    </div>
+  </div>
+</section>
+
 <!-- ★ FAQ -->
 <section class="white-bg">
   <div class="container">
     <h2 class="section-title">常見問題</h2>
     <div class="faq">
       <details open>
-        <summary>這場活動是介紹新書，不是工作坊嗎？</summary>
-        <p>對，這次是線上座談會，重點是好好介紹《結繩領導學》這本書的內容與核心思想。輕鬆的分享形式，適合所有人參加。</p>
+        <summary>這場活動包含哪些內容？</summary>
+        <p>這次活動同時包含三件事：一是<strong>新書介紹</strong>，帶你深入了解《結繩領導學》的核心思想與四大工具；二是<strong>現場座談會</strong>（與作者有約），你可以直接向曜董提問、交流實戰經驗；三是<strong>實體工作坊</strong>的邀請，兩天密集實作，把書中方法真正落地到你的團隊。由淺入深，完全看你的需要。</p>
       </details>
       <details>
-        <summary>這本書適合什麼樣的人閱讀？</summary>
-        <p>適合企業主、高階主管、帶團隊的主管，以及想突破組織瓶頸的核心幹部。</p>
+        <summary>座談會和工作坊有什麼不同？</summary>
+        <p>座談會讓你「看懂」這套系統——聽作者親自拆解書中的觀念，適合所有想認識結繩領導學的人。工作坊讓你「帶回去用」——兩天密集實作，現場拆解你的團隊結構，帶走一份專屬你企業的結構健檢報告。簡單說：座談會是認識，工作坊是落地。</p>
       </details>
       <details>
-        <summary>我不是工程背景，也能理解書中的比喻嗎？</summary>
-        <p>可以。工程比喻是為了讓你更容易理解領導、組織與連結的本質，不需要工程專業也能完整吸收。</p>
+        <summary>這本書適合什麼樣的人？</summary>
+        <p>適合企業主、高階主管、帶團隊的主管，以及想突破組織瓶頸的核心幹部。如果你讀完書覺得「說得有道理，但不知道怎麼用在自己的團隊」，那工作坊就是為你設計的——現場直接拿你的實際情境來操作。</p>
       </details>
       <details>
-        <summary>活動是線上進行嗎？</summary>
-        <p>是的，所有場次皆為線上活動，報名後會收到入場連結，方便您在家參與。</p>
+        <summary>我不是工程背景，也能理解嗎？</summary>
+        <p>完全可以。書中的工程比喻是為了讓觀念更好懂，不需要任何工程專業。在工作坊現場，曜董會親自引導每一步操作，確保每位學員都能上手，帶得走。</p>
       </details>
       <details>
-        <summary>可以選擇適合自己的場次嗎？</summary>
-        <p>可以，請於報名時選擇你想參加的日期，各場次獨立報名。</p>
+        <summary>可以先來座談會，之後再決定要不要報名工作坊嗎？</summary>
+        <p>當然可以。很多人就是先在座談會上聽到核心觀念後，才決定報名工作坊深入實作。我們鼓勵你先來聽、先感受，覺得適合再進一步，完全沒有壓力。</p>
       </details>
       <details>
-        <summary>參加活動需要付費嗎？</summary>
-        <p>全部場次完全免費，只需透過 LINE 官方帳號完成報名即可。</p>
+        <summary>活動怎麼參加？座談會需要付費嗎？</summary>
+        <p>線上座談會完全免費，透過報名連結完成登記即可參加。實體工作坊為兩天付費課程，目前開放台南、台中、台北三個城市場次，可在上方「<a href="#workshop" style="color:var(--blue-deep); text-decoration:underline;">瞭解工作坊</a>」區塊查看詳情與報名。</p>
+      </details>
+      <details>
+        <summary>工作坊兩天會做什麼？</summary>
+        <p>兩天裡你會帶走四樣東西：一份屬於你企業的結構健檢報告、四大工具的實戰操作經驗、與曜董面對面的深度對話機會，以及一群同頻企業主的高品質人脈。不是坐著聽課——是直接拿你的團隊來拆解、重新設計。</p>
       </details>
     </div>
   </div>
 </section>
+
+<!-- ★ Floating Nav -->
+<nav class="float-nav" id="floatNav">
+  <a href="#">
+    <span class="nav-tooltip">回到頂部</span>
+    ▲
+  </a>
+  <a href="#book-intro">
+    <span class="nav-tooltip">瞭解這本書</span>
+    📖
+  </a>
+  <a href="#events">
+    <span class="nav-tooltip">報名活動</span>
+    🎟
+  </a>
+  <a href="#workshop">
+    <span class="nav-tooltip">瞭解工作坊</span>
+    ❤️
+  </a>
+</nav>
 
 <footer>
   <div class="container">《結繩領導學》線上座談會｜光線尺顧問 × RPL團隊 × 精心策劃｜2026｜免費報名</div>
 </footer>
 
 <script>
+// Float nav visibility
+(function(){
+  const nav = document.getElementById('floatNav');
+  window.addEventListener('scroll', function(){
+    if(window.scrollY > 400) nav.classList.add('visible');
+    else nav.classList.remove('visible');
+  });
+})();
+
 function updateCountdowns(){
   const now = new Date().getTime();
   document.querySelectorAll('.event-count').forEach(el=>{
