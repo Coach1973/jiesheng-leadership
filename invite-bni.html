@@ -147,7 +147,7 @@ img { max-width: 100%; display: block; }
   50%      { transform: translateY(-18px); }
 }
 .book-card { position: relative; overflow: visible; }
-.book-img-wrap { display: flex; justify-content: center; align-items: center; width: min(280px, 72%); margin: 0 auto; }
+.book-img-wrap { display: flex; justify-content: center; align-items: center; width: min(320px, 78%); margin: 0 auto; }
 .book-img {
   width: 100%; height: auto;
   filter: drop-shadow(0 30px 40px rgba(0,0,0,.45)) drop-shadow(0 8px 20px rgba(242,140,40,.35));
@@ -217,7 +217,7 @@ img { max-width: 100%; display: block; }
 .reason-num { font-family: "Noto Serif TC", serif; font-weight: 900; color: var(--orange-soft); font-size: 32px; margin-bottom: 8px; }
 .reason-text { font-size: 20px; font-weight: 700; color: #fff; line-height: 1.5; }
 .closing-line {
-  text-align: center; margin-top: 34px; font-size: 20px; color: rgba(255,255,255,.85); line-height: 1.9;
+  text-align: center; margin-top: 34px; font-size: 22px; color: rgba(255,255,255,.85); line-height: 1.9;
 }
 
 /* final invite card */
@@ -252,14 +252,33 @@ img { max-width: 100%; display: block; }
 .btn-primary:hover {
   transform: translateY(-2px); box-shadow: 0 18px 36px rgba(242,140,40,.5), 0 0 0 3px rgba(255,255,255,.5);
 }
+.btn-navy {
+  background: linear-gradient(135deg, var(--blue-deep), var(--blue)); color: #fff;
+  box-shadow: 0 14px 30px rgba(11,39,66,.4); margin-bottom: 12px;
+}
+.btn-navy:hover {
+  transform: translateY(-2px); box-shadow: 0 18px 36px rgba(11,39,66,.5), 0 0 0 3px rgba(255,255,255,.5);
+}
 .btn-line { background: rgba(11,39,66,.06); color: var(--blue-deep); border: 1px solid rgba(11,39,66,.15); transition: background-color .25s ease, box-shadow .25s ease, transform .25s ease; }
 .btn-line:hover { background: rgba(11,39,66,.1); box-shadow: 0 0 0 3px var(--blue-deep); transform: translateY(-2px); }
 
 footer { text-align: center; padding: 34px 24px 46px; color: var(--muted); font-size: 16px; background: var(--paper); }
 footer a { color: var(--blue-mid); font-weight: 700; text-decoration: none; }
+
+/* 回到頂部按鈕 */
+.top-btn {
+  position: fixed; right: 18px; bottom: 18px; z-index: 999;
+  width: 52px; height: 52px; border-radius: 50%;
+  background: var(--blue-deep); color: #fff;
+  display: flex; align-items: center; justify-content: center;
+  font-size: 13px; font-weight: 900; letter-spacing: .5px;
+  text-decoration: none; box-shadow: 0 8px 20px rgba(11,39,66,.4);
+  transition: transform .2s ease, box-shadow .2s ease, background-color .2s ease;
+}
+.top-btn:hover { background: var(--orange); transform: translateY(-3px); box-shadow: 0 12px 26px rgba(242,140,40,.4); }
 </style>
 </head>
-<body>
+<body id="top">
 
 <!-- ① HERO -->
 <section class="screen screen-navy hero">
@@ -268,7 +287,7 @@ footer a { color: var(--blue-mid); font-weight: 700; text-decoration: none; }
   <div class="wrap">
     <span class="eyebrow">BNI 專屬邀請 · 大樹教練</span>
     <h1 class="serif">有了團隊，<br>就有了<span class="hl">一切</span>。</h1>
-    <p class="hero-sub">從一個人到一個團隊，從來都不是簡單的事<br><span style="color:var(--orange-soft);font-weight:800;">但這一切，值得</span></p>
+    <p class="hero-sub">從一個人到一個團隊<br>從來都不是簡單的事<br><span style="color:var(--orange-soft);font-weight:800;">但這一切值得</span></p>
     <div class="date-pill">
       <span class="d">2026 . 08 . 19 – 20</span>
       <span class="v">台南維悅酒店｜結繩領導學工作坊</span>
@@ -329,9 +348,9 @@ footer a { color: var(--blue-mid); font-weight: 700; text-decoration: none; }
   <div class="wrap reveal" style="text-align:center;">
     <span class="eyebrow">本次工作坊．源自這本書</span>
     <div class="book-card">
-      <div class="book-img-wrap">
+      <a class="book-img-wrap" href="https://jiesheng-leadership.netlify.app/" target="_blank" rel="noopener noreferrer">
         <img src="book.png" alt="結繩領導學封面" class="book-img">
-      </div>
+      </a>
     </div>
     <p style="margin-top:24px;font-size:24px;font-weight:900;color:#fff;">《結繩領導學》</p>
     <p style="font-size:18px;color:rgba(255,255,255,.75);margin-top:8px;">不是心靈雞湯，是一份企業家的結構安全計算書</p>
@@ -436,7 +455,7 @@ footer a { color: var(--blue-mid); font-weight: 700; text-decoration: none; }
 <section class="screen screen-navy">
   <div class="wrap reveal">
     <p class="statement on-navy" style="font-size:23px;">
-      這麼重要的事情，這麼好的工作坊<br>邀請您 8月19–20 為了——
+      這麼重要的事情<br>這麼好的工作坊<br>邀請您 8月19–20
     </p>
     <div class="reason-grid">
       <div class="reason-card"><div class="reason-num">01</div><div class="reason-text">事業發展</div></div>
@@ -444,7 +463,7 @@ footer a { color: var(--blue-mid); font-weight: 700; text-decoration: none; }
       <div class="reason-card"><div class="reason-num">03</div><div class="reason-text">擁有更好的<br>影響力</div></div>
       <div class="reason-card"><div class="reason-num">04</div><div class="reason-text">得到更好的<br>商業成果</div></div>
     </div>
-    <p class="closing-line">與我們這一群積極向上、熱愛學習的夥伴，<br>一起共渡這生命中最重要的兩天。</p>
+    <p class="closing-line">與我們這一群<br>積極向上熱愛學習的夥伴<br>一起共度這生命中最重要的兩天。</p>
   </div>
 </section>
 
@@ -456,7 +475,7 @@ footer a { color: var(--blue-mid); font-weight: 700; text-decoration: none; }
       <p class="invite-recap">2026.08.19（三）– 08.20（四）｜台南維悅酒店</p>
       <p class="invite-sign">大樹教練　敬邀</p>
       <a class="btn btn-primary" href="https://forms.gle/uLacoA3UqGVg8G4s9" target="_blank" rel="noopener noreferrer">✓ 我要出席，立即報名</a>
-      <a class="btn btn-primary" href="https://forms.gle/FFrUM9wAdWSHtUaC8" target="_blank" rel="noopener noreferrer">✓ 我要出席台中場</a>
+      <a class="btn btn-navy" href="https://forms.gle/FFrUM9wAdWSHtUaC8" target="_blank" rel="noopener noreferrer">✓ 我要出席台中場</a>
       <a class="btn btn-primary" href="https://forms.gle/2gAqndb6cYASAu2XA" target="_blank" rel="noopener noreferrer">✓ 我要出席台北場</a>
       <a class="btn btn-line" href="https://line.me/R/ti/p/@pbz5529q" target="_blank" rel="noopener noreferrer">有問題，加 LINE 詢問教練</a>
     </div>
@@ -466,6 +485,8 @@ footer a { color: var(--blue-mid); font-weight: 700; text-decoration: none; }
 <footer>
   結繩領導學 × 大樹教練　｜　<a href="https://jiesheng-leadership.netlify.app/" target="_blank" rel="noopener noreferrer">了解完整課程介紹</a>
 </footer>
+
+<a href="#top" class="top-btn" aria-label="回到頂部">TOP</a>
 
 <script>
 const io = new IntersectionObserver((entries) => {
