@@ -105,8 +105,8 @@ img { max-width: 100%; display: block; }
 
 /* emotional core：一行一行，大小交替 */
 .core-line { text-align: center; font-weight: 900; line-height: 1.4; margin: 8px 0; }
-.core-line.sz36 { font-size: 36px; }
-.core-line.sz48 { font-size: 48px; color: var(--orange-soft); }
+.core-line.sz36 { font-size: 44px; }
+.core-line.sz48 { font-size: 60px; color: var(--orange-soft); }
 
 /* ===== event card ===== */
 .event-card {
@@ -125,12 +125,33 @@ img { max-width: 100%; display: block; }
 .chip {
   border: 1.5px solid var(--orange); color: var(--blue-deep); background: rgba(242,140,40,.08);
   font-weight: 800; font-size: 22px; padding: 8px 16px; border-radius: 999px;
+  transition: box-shadow .25s ease, background-color .25s ease, transform .25s ease;
+}
+.chip:hover {
+  background: rgba(242,140,40,.22); box-shadow: 0 0 0 3px var(--orange); transform: translateY(-2px);
 }
 .identity-chip-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 14px; margin-top: 6px; }
 .identity-chip {
   border: 2px solid var(--orange); color: var(--blue-deep); background: rgba(242,140,40,.08);
   font-family: "Noto Serif TC", serif; font-weight: 900; font-size: 36px;
   padding: 20px 8px; border-radius: 18px; text-align: center;
+  transition: box-shadow .25s ease, background-color .25s ease, transform .25s ease;
+}
+.identity-chip:hover {
+  background: rgba(242,140,40,.22); box-shadow: 0 0 0 4px var(--orange); transform: translateY(-3px);
+}
+
+/* ===== 浮動書本 ===== */
+@keyframes float {
+  0%,100% { transform: translateY(0px); }
+  50%      { transform: translateY(-18px); }
+}
+.book-card { position: relative; overflow: visible; }
+.book-img-wrap { display: flex; justify-content: center; align-items: center; width: min(280px, 72%); margin: 0 auto; }
+.book-img {
+  width: 100%; height: auto;
+  filter: drop-shadow(0 30px 40px rgba(0,0,0,.45)) drop-shadow(0 8px 20px rgba(242,140,40,.35));
+  animation: float 4s ease-in-out infinite;
 }
 
 /* ===== 講師介紹 ===== */
@@ -228,9 +249,11 @@ img { max-width: 100%; display: block; }
   background: linear-gradient(135deg, var(--orange), var(--orange-soft)); color: #fff;
   box-shadow: 0 14px 30px rgba(242,140,40,.4); margin-bottom: 12px;
 }
-.btn-primary:hover { transform: translateY(-2px); box-shadow: 0 18px 36px rgba(242,140,40,.5); }
-.btn-line { background: rgba(11,39,66,.06); color: var(--blue-deep); border: 1px solid rgba(11,39,66,.15); }
-.btn-line:hover { background: rgba(11,39,66,.1); }
+.btn-primary:hover {
+  transform: translateY(-2px); box-shadow: 0 18px 36px rgba(242,140,40,.5), 0 0 0 3px rgba(255,255,255,.5);
+}
+.btn-line { background: rgba(11,39,66,.06); color: var(--blue-deep); border: 1px solid rgba(11,39,66,.15); transition: background-color .25s ease, box-shadow .25s ease, transform .25s ease; }
+.btn-line:hover { background: rgba(11,39,66,.1); box-shadow: 0 0 0 3px var(--blue-deep); transform: translateY(-2px); }
 
 footer { text-align: center; padding: 34px 24px 46px; color: var(--muted); font-size: 16px; background: var(--paper); }
 footer a { color: var(--blue-mid); font-weight: 700; text-decoration: none; }
@@ -300,7 +323,22 @@ footer a { color: var(--blue-mid); font-weight: 700; text-decoration: none; }
   </div>
 </section>
 
-<!-- ⑤ 講師介紹：蔡曜隆顧問 -->
+<!-- ⑤ 本書：結繩領導學 -->
+<section class="screen screen-navy">
+  <div class="glow" style="width:280px;height:280px;right:-90px;top:-60px;background:rgba(242,140,40,.18)"></div>
+  <div class="wrap reveal" style="text-align:center;">
+    <span class="eyebrow">本次工作坊．源自這本書</span>
+    <div class="book-card">
+      <div class="book-img-wrap">
+        <img src="book.png" alt="結繩領導學封面" class="book-img">
+      </div>
+    </div>
+    <p style="margin-top:24px;font-size:24px;font-weight:900;color:#fff;">《結繩領導學》</p>
+    <p style="font-size:18px;color:rgba(255,255,255,.75);margin-top:8px;">不是心靈雞湯，是一份企業家的結構安全計算書</p>
+  </div>
+</section>
+
+<!-- ⑥ 講師介紹：蔡曜隆顧問 -->
 <section class="screen screen-paper">
   <div class="wrap reveal">
     <span class="eyebrow-dark">本次工作坊．引路人</span>
@@ -359,7 +397,7 @@ footer a { color: var(--blue-mid); font-weight: 700; text-decoration: none; }
   </div>
 </section>
 
-<!-- ⑥ 願景：像101一樣穩 -->
+<!-- ⑦ 願景：像101一樣穩 -->
 <section class="screen screen-navy">
   <div class="wrap reveal">
     <p class="statement on-navy" style="font-size:24px;">
@@ -380,7 +418,7 @@ footer a { color: var(--blue-mid); font-weight: 700; text-decoration: none; }
   </div>
 </section>
 
-<!-- ⑦ BNI 專屬價值 -->
+<!-- ⑧ BNI 專屬價值 -->
 <section class="screen screen-paper">
   <div class="wrap reveal" style="text-align:center;">
     <span class="bni-badge">BNI 專屬價值</span>
@@ -394,7 +432,7 @@ footer a { color: var(--blue-mid); font-weight: 700; text-decoration: none; }
   </div>
 </section>
 
-<!-- ⑧ 四個為了 -->
+<!-- ⑨ 四個為了 -->
 <section class="screen screen-navy">
   <div class="wrap reveal">
     <p class="statement on-navy" style="font-size:23px;">
@@ -410,14 +448,16 @@ footer a { color: var(--blue-mid); font-weight: 700; text-decoration: none; }
   </div>
 </section>
 
-<!-- ⑨ 邀請函 CTA -->
+<!-- ⑩ 邀請函 CTA -->
 <section class="screen screen-paper2" style="padding-bottom:60px;">
   <div class="wrap reveal">
     <div class="invite-card">
-      <p class="invite-q">請問，<br>您能出席這兩天的工作坊嗎？</p>
+      <p class="invite-q"><span style="font-size:36px;">請問</span><br>您能出席這兩天的工作坊嗎？</p>
       <p class="invite-recap">2026.08.19（三）– 08.20（四）｜台南維悅酒店</p>
       <p class="invite-sign">大樹教練　敬邀</p>
       <a class="btn btn-primary" href="https://forms.gle/uLacoA3UqGVg8G4s9" target="_blank" rel="noopener noreferrer">✓ 我要出席，立即報名</a>
+      <a class="btn btn-primary" href="https://forms.gle/FFrUM9wAdWSHtUaC8" target="_blank" rel="noopener noreferrer">✓ 我要出席台中場</a>
+      <a class="btn btn-primary" href="https://forms.gle/2gAqndb6cYASAu2XA" target="_blank" rel="noopener noreferrer">✓ 我要出席台北場</a>
       <a class="btn btn-line" href="https://line.me/R/ti/p/@pbz5529q" target="_blank" rel="noopener noreferrer">有問題，加 LINE 詢問教練</a>
     </div>
   </div>
