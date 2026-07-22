@@ -498,7 +498,7 @@ footer { background:var(--blue-deep); color:rgba(255,255,255,.7); text-align:cen
         <div class="event-time">20:00 – 21:30　主持人/大樹教練</div>
         <div class="event-count" data-date="2026-07-19T20:00:00">倒數載入中…</div>
         <div class="event-limit">限額 100 人</div>
-        <a class="btn btn-primary" href="https://line.me/R/ti/p/@pbz5529q" target="_blank" rel="noopener noreferrer" style="font-size:13px;padding:10px 18px;">免費報名</a>
+        <a class="btn btn-expired" href="https://line.me/R/ti/p/@pbz5529q" target="_blank" rel="noopener noreferrer" style="font-size:13px;padding:10px 18px;">已截止報名</a>
       </div>
       <!-- 7月23日｜與作者有約（實體座談會） -->
       <div class="event-card">
@@ -507,7 +507,7 @@ footer { background:var(--blue-deep); color:rgba(255,255,255,.7); text-align:cen
         <div class="event-time" style="font-size:13px;">高雄市立圖書館 3樓 階梯閣樓<br>高雄市前鎮區新光路61號</div>
         <div class="event-count" data-date="2026-07-23T14:00:00">倒數載入中…</div>
         <div class="event-limit">限額 70 人</div>
-        <a class="btn btn-primary" href="https://line.me/R/ti/p/@pbz5529q" target="_blank" rel="noopener noreferrer" style="font-size:13px;padding:10px 18px;">免費報名</a>
+        <a class="btn btn-primary" data-close-at="2026-07-23T00:00:00" href="https://line.me/R/ti/p/@pbz5529q" target="_blank" rel="noopener noreferrer" style="font-size:13px;padding:10px 18px;">免費報名</a>
       </div>
     </div>
   </div>
@@ -651,6 +651,24 @@ function updateCountdowns(){
 }
 updateCountdowns();
 setInterval(updateCountdowns, 60000);
+
+// 定時自動截止報名：按鈕帶 data-close-at 屬性，時間一到自動變「已截止報名」（訪客瀏覽器端判斷，免重新部署）
+function autoCloseRegistration(){
+  const now = new Date().getTime();
+  document.querySelectorAll('a.btn[data-close-at]').forEach(btn=>{
+    const closeAt = new Date(btn.dataset.closeAt).getTime();
+    if(now >= closeAt && !btn.classList.contains('btn-expired')){
+      btn.textContent = '已截止報名';
+      btn.classList.remove('btn-primary');
+      btn.classList.add('btn-expired');
+      btn.removeAttribute('href');
+      btn.setAttribute('aria-disabled','true');
+      btn.style.cursor = 'not-allowed';
+    }
+  });
+}
+autoCloseRegistration();
+setInterval(autoCloseRegistration, 30000);
 </script>
 </body>
 </html>
